@@ -1,55 +1,60 @@
 antibiotic_resistance_in_gonorrhea
 ==============================
 
-Predicting antibiotic resistance in gonorrhea using genomic data.
+Using genetic data from strains of gonorrhea, I developed three models to predict resistance to
+azithromycin, ciprofloxacin, and cefixime to efficiently inform physicians of effective
+treatments and combat the rise of antibiotic resistance that accompanies frequent prescription
+of primary antibiotic treatments. I utilized statistical analysis to determine features
+correlated with resistance among 8000 DNA sequences and ensemble methods to develop models with
+effective recall.
 
 Project Organization
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
-    │   ├── external       <- Data from third party sources.
     │   ├── interim        <- Intermediate data that has been transformed.
+    │       ├── azm_data.csv
+    │       ├── azm_data_step2.csv
+    │       ├── cip_data.csv
+    │       ├── cip_data_step2.csv
+    │       ├── cfx_data.csv
+    │       └── cfx_data_step2.csv
     │   ├── processed      <- The final, canonical data sets for modeling.
+    │       ├── azm_data_final.csv
+    │       ├── cip_data.csv
+    │       ├── cip_data_final.csv
+    │       ├── cfx_data.csv
+    │       └── cfx_data_final.csv
     │   └── raw            <- The original, immutable data dump.
+    │       ├── azm_sr_gwas_filtered_unitigs.Rtab
+    │       ├── cfx_sr_gwas_filtered_unitigs.Rtab
+    │       ├── cip_sr_gwas_filtered_unitigs.Rtab
+    │       └── metadata.csv
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks
+    │   ├── 01_data_wrangling.ipynb
+    │   ├── 02_exploratory_data_analysis.ipynb
+    │   ├── 03_preprocessing_and_training.ipynb
+    │   └── 04_modeling.ipynb 
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    │   ├── final_report_antibiotic_resistance.pdf
+    │   ├── project_proposal_antibiotic_resistance.pdf
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
     │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    └── src                <- Source code for use in this project.
+
 
 
 --------
